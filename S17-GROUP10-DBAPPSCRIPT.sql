@@ -137,8 +137,6 @@ VALUES
 ('CUS', 'Customer'); -- No permissions to backend information
 UNLOCK TABLES;
 
-SELECT *
-FROM Roles;
 -- User Records (TBD By Jat)
 
 -- Performer Records (TBD By DJ)
