@@ -144,7 +144,7 @@ LOCK TABLES Users WRITE;
 INSERT INTO Users(first_name, last_name, user_email, user_password)
 VALUES
 ('Anja', 'Gonzalez', 'anja_gonzalez@dlsu.edu.ph', 's5Z+r35Rhn');
-('David', 'Buban', 'david_buban@dlsu.edu.ph', 'ZLG:c5(NG!');
+('David', 'Buban', 'david_joseph_buban@dlsu.edu.ph', 'ZLG:c5(NG!');
 ('John', 'Teoxon', 'john_teoxon@dlsu.edu.ph', 'Z7dvhLrM#c');
 ('Mark', 'Leery', 'm_leery1987@gmail.com', 'MA8!C-gv!A');
 ('Benjamin', 'Gale', 'b_gales1994@gmail.com', 'FERQ538L13');
