@@ -143,7 +143,11 @@ CREATE TABLE Merchandise_Purchases (
 LOCK TABLES Users WRITE;
 INSERT INTO Users(first_name, last_name, user_email, user_password)
 VALUES
-();
+('Anja', 'Gonzalez', 'anja_gonzalez@dlsu.edu.ph', 's5Z+r35Rhn');
+('David', 'Buban', 'david_buban@dlsu.edu.ph', 'ZLG:c5(NG!');
+('John', 'Teoxon', 'john_teoxon@dlsu.edu.ph', 'Z7dvhLrM#c');
+('Mark', 'Leery', 'm_leery1987@gmail.com', 'MA8!C-gv!A');
+('Benjamin', 'Gale', 'b_gales1994@gmail.com', 'FERQ538L13');
 UNLOCK TABLES;
 
 -- Customer Records (TBD By DJ)
@@ -172,7 +176,16 @@ UNLOCK TABLES;
 LOCK TABLES Employees WRITE;
 INSERT INTO Employees(weekly_salary, hire_date, user_ID, role_ID)
 VALUES
-();
+('1915', '2008-05-15', '101', 'DBA');
+('2081', '2010-05-19', '102', 'COG');
+('2760', '2015-05-04', '103', 'TMG');
+('2350', '2016-04-19', '104', 'VMG');
+('2350', '2019-01-11', '105', 'VMG');
+('2350', '2009-03-17', '106', 'VMG');
+('2183', '2009-11-26', '107', 'MMG');
+('2183', '2011-11-28', '108', 'MMG');
+('2456', '2012-09-13', '109', 'FIA');
+('2456', '2015-09-30', '110', 'FIA');
 UNLOCK TABLES;
 
 -- Performer Records (TBD By DJ)
@@ -188,7 +201,14 @@ UNLOCK TABLES;
 LOCK TABLES Locations WRITE;
 INSERT INTO Locations(street, city)
 VALUES
-();
+('1260 6th Ave', 'New York');
+('Wembley HA9 0WS', 'London');
+('2 Place de la Porte Maillot', 'Paris');
+('Via Pietro Borsieri', 'Milan');
+('Kleine Bockenheimer Str. 18a', 'Frankfurt');
+('285 W Washington St', 'Athens');
+('2124 Broadway', 'New York');
+('Almogavers 122', 'Barcelona');
 UNLOCK TABLES;
 
 -- Venue Records (TBD By Jat)
@@ -196,7 +216,14 @@ UNLOCK TABLES;
 LOCK TABLES Venues WRITE;
 INSERT INTO Venues(venue_name, rental_fee, merchandise_cut_percentage, location_ID)
 VALUES
-();
+('Radio City Music Hall', '39000', '%', '1');
+('Wembley Stadium', '54000', '%', '2');
+('Palais des Congres de Paris', '80000', '%', '3');
+('Blue Note', '43000', '%', '4');
+('Jazzkeller', '38000', '%', '5');
+('40 Watt Club', '42500', '%', '6');
+('The Beacon Theater', '52400', '%', '1');
+('Razzmatazz', '38500', '%', '7');
 UNLOCK TABLES;
 
 -- Venue Section Records (TBD By Jat)
@@ -204,7 +231,45 @@ UNLOCK TABLES;
 LOCK TABLES Venue_Sections WRITE;
 INSERT INTO Venue_Sections(section_name, capacity, venue_ID)
 VALUES
-();
+('Standard', '1500', '1');
+('Premium', '850', '1');
+('Front-Row', '280', '1');
+('VIP', '150', '1');
+
+('Standard', '2050', '2');
+('Premium', '1800', '2');
+('Front-Row', '350', '2');
+('VIP', '280', '2');
+
+('Standard', '2250', '3');
+('Premium', '1250', '3');
+('Front-Row', '580', '3');
+('VIP', '120', '3');
+
+('Standard', '1780', '4');
+('Premium', '950', '4');
+('Front-Row', '200', '4');
+('VIP', '100', '4');
+
+('Standard', '1100', '5');
+('Premium', '550', '5');
+('Front-Row', '280', '5');
+('VIP', '150', '5');
+
+('Standard', '1000', '6');
+('Premium', '850', '6');
+('Front-Row', '200', '6');
+('VIP', '60', '6');
+
+('Standard', '1500', '7');
+('Premium', '1050', '7');
+('Front-Row', '280', '7');
+('VIP', '150', '7');
+
+('Standard', '1000', '8');
+('Premium', '770', '8');
+('Front-Row', '180', '8');
+('VIP', '50', '8');
 UNLOCK TABLES;
 
 -- Concert Records (TBD By Anja)
