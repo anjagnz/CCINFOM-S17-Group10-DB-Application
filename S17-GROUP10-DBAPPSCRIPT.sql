@@ -155,7 +155,27 @@ UNLOCK TABLES;
 LOCK TABLES Customers WRITE;
 INSERT INTO Customers(user_ID)
 VALUES
-();
+('1000');
+('1001');
+('1002');
+('1003');
+('1004');
+('1005');
+('1006');
+('1007');
+('1008');
+('1009');
+('1010');
+('1011');
+('1012');
+('1013');
+('1014');
+('1015');
+('1016');
+('1017');
+('1018');
+('1019');
+('1020');
 UNLOCK TABLES;
 
 -- Role Records (TBD By Anja)
@@ -193,7 +213,24 @@ UNLOCK TABLES;
 LOCK TABLES Performers WRITE;
 INSERT INTO Performers(performer_name, record_label)
 VALUES
-();
+('Michael Jackson', 'Sony Records');
+('Michael Jackson', 'Epic Records');
+('Rihanna', 'Roc Nation');
+('Alicia Keys', 'Roc Nation');
+('Lil Uzi Vert', 'Roc Nation');
+('Megan Thee Stallion', 'Roc Nation');
+('Billie Eilish', 'Interscope Records');
+('Eminem', 'Shady Records');
+('Eminem', 'Aftermath Entertainment');
+('Anderson .Paak', 'Aftermath Entertainment');
+('Anderson .Paak', 'Apeshit Inc.');
+('Kendrick Lamar', 'Interscope Records');
+('Kendrick Lamar', 'Aftermath Entertainment');
+('Kendrick Lamar', 'Top Dawg Entertainment');
+('Juice WRLD', 'Interscope Records');
+('Juice WRLD', 'Grade "A" Productions');
+('Juice WRLD', 'Polydor Records');
+
 UNLOCK TABLES;
 
 -- Location Records (TBD By Jat)
