@@ -427,7 +427,16 @@ UNLOCK TABLES;
 LOCK TABLES Merchandise WRITE;
 INSERT INTO Merchandise(item_name, price, quantity_in_stock, concert_ID)
 VALUES
-();
+('LED Wristband', 250, 10000, 5),
+('Poster', 550, 5000, 5),
+('T-shirt', 400, 7000, 4),
+('Sweater', 750, 3000, 4),
+('T-shirt', 400, 7500, 3),
+('Poster', 500, 5000, 3),
+('Hoodie', 900, 3000, 2),
+('Tote Bag', 500, 4000, 2),
+('Hoodie', 1000, 3000, 1),
+('Crop top', 400, 2500, 1);
 UNLOCK TABLES;
 
 -- Merchandise Purchase Records (TBD By DJ)
