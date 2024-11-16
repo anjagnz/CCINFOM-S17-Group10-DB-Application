@@ -47,7 +47,7 @@ CREATE TABLE Performers (
 
 DROP TABLE IF EXISTS Countries;
 CREATE TABLE Countries (
-	country_ID VARCHAR(3) PRIMARY KEY,
+	country_ID INT PRIMARY KEY AUTO_INCREMENT,
     country_name VARCHAR(64)
 );
 
@@ -255,15 +255,15 @@ UNLOCK TABLES;
 -- Country Records (TBD By Anja)
 
 LOCK TABLES Countries WRITE;
-INSERT INTO Countries(country_id, country_name)
+INSERT INTO Countries(country_name)
 VALUES
-('USA', 'United States of America'),
-('GBR', 'United Kingdom'),
-('FRA', 'France'),
-('ITA', 'Italy'),
-('DEU', 'Germany'),
-('GRC', 'Greece'),
-('ESP', 'Spain');
+('United States of America'),
+('United Kingdom'),
+('France'),
+('Italy'),
+('Germany'),
+('Greece'),
+('Spain');
 UNLOCK TABLES;
 
 -- City Records (TBD By Anja)
@@ -271,13 +271,13 @@ UNLOCK TABLES;
 LOCK TABLES Cities WRITE;
 INSERT INTO Cities(city_name, country_id)
 VALUES
-('New York', 'USA'),
-('London', 'GBR'),
-('Paris', 'FRA'),
-('Milan', 'ITA'),
-('Frankfurt', 'DEU'),
-('Athens', 'GRC'),
-('Barcelona', 'ESP');
+('New York', 1),
+('London', 2),
+('Paris', 3),
+('Milan', 4),
+('Frankfurt', 5),
+('Athens', 6),
+('Barcelona', 7);
 -- Location Records (TBD By Jat)
 
 LOCK TABLES Locations WRITE;
