@@ -3,7 +3,6 @@
 CREATE DATABASE IF NOT EXISTS S17_Group10_ConcertDB;
 USE S17_Group10_ConcertDB;
 
-
 -- Table Creation
 
 DROP TABLE IF EXISTS Users;
@@ -360,11 +359,11 @@ UNLOCK TABLES;
 LOCK TABLES Concerts WRITE;
 INSERT INTO Concerts(concert_name, concert_date, start_time, end_time, concert_status, performer_ID, venue_ID)
 VALUES
-('BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR', '11-13-2024', '19:00:00', '23:00:00', 'COMPLETED', 6, 1),
-('Love On Tour', '08-01-2023', '18:00:00', '22:00:00', 'COMPLETED', 24, 2),
-('The Pop Out', '06-19-2024', '18:30:00', '22:00:00', 'COMPLETED', 9, 3),
-('The Car Tour', '10-19-2023', '18:00:00', '22:30:00', 'COMPLETED', 14, 4),
-('After Hours Till Dawn Tour', '11-25-2023', '18:30:00', '23:00:00', 'COMPLETED', 13, 5);
+('BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR', '2024-11-13', '19:00:00', '23:00:00', 'COMPLETED', 6, 1),
+('Love On Tour', '2023-08-01', '18:00:00', '22:00:00', 'COMPLETED', 24, 2),
+('The Pop Out', '2024-06-19', '18:30:00', '22:00:00', 'COMPLETED', 9, 3),
+('The Car Tour', '2023-10-19', '18:00:00', '22:30:00', 'COMPLETED', 14, 4),
+('After Hours Till Dawn Tour', '2023-11-25', '18:30:00', '23:00:00', 'COMPLETED', 13, 5);
 UNLOCK TABLES;
 
 -- Ticket Type Records (TBD By Anja)
@@ -403,11 +402,16 @@ UNLOCK TABLES;
 LOCK TABLES Transactions WRITE;
 INSERT INTO Transactions(date_of_transaction, customer_ID)
 VALUES
-('11-01-2024', 1),
-('07-02-2023', 2),
-('05-09-2024', 3),
-('10-03-2024', 4),
-('10-31-2023', 5);
+('2024-11-01 14:30:00', 1),
+('2023-07-02 12:00:00', 2),
+('2024-05-09 9:25:00', 3),
+('2024-10-03 16:51:00', 4),
+('2023-10-31 13:11:00', 5),
+('2024-11-01 15:30:00', 1),
+('2023-07-02 13:00:00', 2),
+('2024-05-09 10:25:00', 3),
+('2024-10-03 17:51:00', 4),
+('2023-10-31 14:11:00', 5);
 UNLOCK TABLES;
 
 -- Ticket Records (TBD By Anja)
@@ -444,9 +448,9 @@ UNLOCK TABLES;
 LOCK TABLES Merchandise_Purchases WRITE;
 INSERT INTO Merchandise_Purchases(quantity_bought, item_ID, transaction_ID)
 VALUES
-(10, 1, 1),
-(100, 9, 4),
-(2, 3, 2),
-(4, 8, 5),
-(8, 4, 3);
+(10, 1, 6),
+(100, 9, 9),
+(2, 3, 7),
+(4, 8, 10),
+(8, 4, 8);
 UNLOCK TABLES;
