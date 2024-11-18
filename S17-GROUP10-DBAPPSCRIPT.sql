@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS Cities;
 CREATE TABLE Cities (
 	city_ID INT PRIMARY KEY AUTO_INCREMENT,
     city_name VARCHAR(64),
-    country_ID VARCHAR(3),
+    country_ID INT,
     FOREIGN KEY (country_ID) REFERENCES Countries (country_ID)
 );
 
