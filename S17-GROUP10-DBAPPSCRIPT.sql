@@ -89,6 +89,7 @@ DROP TABLE IF EXISTS Concerts;
 CREATE TABLE Concerts (
 	concert_ID INT PRIMARY KEY AUTO_INCREMENT,
     concert_name VARCHAR(100),
+    transaction_date TIMESTAMP,
     concert_date DATE,
     start_time TIME,
     end_time TIME,
@@ -357,13 +358,13 @@ UNLOCK TABLES;
 -- Concert Records (TBD By Anja)
 
 LOCK TABLES Concerts WRITE;
-INSERT INTO Concerts(concert_name, concert_date, start_time, end_time, concert_status, performer_ID, venue_ID)
+INSERT INTO Concerts(concert_name, transaction_date, concert_date, start_time, end_time, concert_status, performer_ID, venue_ID)
 VALUES
-('BILLIE EILISH: HIT ME HARD AND SOFT: THE TOUR', '2024-11-13', '19:00:00', '23:00:00', 'COMPLETED', 6, 1),
-('Love On Tour', '2023-08-01', '18:00:00', '22:00:00', 'COMPLETED', 24, 2),
-('The Pop Out', '2024-06-19', '18:30:00', '22:00:00', 'COMPLETED', 9, 3),
-('The Car Tour', '2023-10-19', '18:00:00', '22:30:00', 'COMPLETED', 14, 4),
-('After Hours Till Dawn Tour', '2023-11-25', '18:30:00', '23:00:00', 'COMPLETED', 13, 5);
+('HIT ME HARD AND SOFT', '2024-09-10 13:00:00', '2024-11-13', '19:00:00', '23:00:00', 'COMPLETED', 6, 1),
+('Love On Tour', '2023-05-20 14:30:00', '2023-08-01', '18:00:00', '22:00:00', 'COMPLETED', 24, 2),
+('The Pop Out', '2024-01-29 8:00:00', '2024-06-19', '18:30:00', '22:00:00', 'COMPLETED', 9, 3),
+('The Car Tour', '2023-06-01 16:30:00', '2023-10-19', '18:00:00', '22:30:00', 'COMPLETED', 14, 4),
+('After Hours Till Dawn Tour', '2023-07-05 17:00:00', '2023-11-25', '18:30:00', '23:00:00', 'COMPLETED', 13, 5);
 UNLOCK TABLES;
 
 -- Ticket Type Records (TBD By Anja)
@@ -431,16 +432,16 @@ UNLOCK TABLES;
 LOCK TABLES Merchandise WRITE;
 INSERT INTO Merchandise(item_name, price, quantity_in_stock, concert_ID)
 VALUES
-('Hoodie', 1000, 3000, 1),
-('Crop top', 400, 2500, 1),
-('Hoodie', 900, 3000, 2),
-('Tote Bag', 500, 4000, 2),
-('T-shirt', 400, 7500, 3),
-('Poster', 500, 5000, 3),
-('T-shirt', 400, 7000, 4),
-('Sweater', 750, 3000, 4),
-('Keychain', 250, 10000, 5),
-('Poster', 550, 5000, 5);
+('Hoodie', 100, 3000, 1),
+('Crop top', 40, 2500, 1),
+('Hoodie', 90, 3000, 2),
+('Tote Bag', 50, 4000, 2),
+('T-shirt', 40, 7500, 3),
+('Poster', 50, 5000, 3),
+('T-shirt', 40, 7000, 4),
+('Sweater', 75, 3000, 4),
+('Keychain', 25, 10000, 5),
+('Poster', 55, 5000, 5);
 UNLOCK TABLES;
 
 -- Merchandise Purchase Records (TBD By DJ)
