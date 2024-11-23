@@ -124,9 +124,9 @@ DROP TABLE IF EXISTS Tickets;
 CREATE TABLE Tickets (
 	ticket_ID INT PRIMARY KEY AUTO_INCREMENT,
     ticket_type_ID INT,
-    FOREIGN KEY (ticket_type_ID) REFERENCES Ticket_Types (ticket_type_ID),
+    FOREIGN KEY (ticket_type_ID) REFERENCES Ticket_Types (ticket_type_ID) ON DELETE CASCADE,
     transaction_ID INT,
-    FOREIGN KEY (transaction_ID) REFERENCES Transactions (transaction_ID)
+    FOREIGN KEY (transaction_ID) REFERENCES Transactions (transaction_ID) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS Merchandise;
@@ -146,7 +146,7 @@ CREATE TABLE Merchandise_Purchases (
     item_ID INT,
     FOREIGN KEY (item_ID) REFERENCES Merchandise (item_ID),
     transaction_ID INT,
-    FOREIGN KEY (transaction_ID) REFERENCES Transactions (transaction_ID)
+    FOREIGN KEY (transaction_ID) REFERENCES Transactions (transaction_ID) ON DELETE CASCADE
 );
 
 
@@ -408,11 +408,36 @@ VALUES
 ('2024-05-09 9:25:00', 3),
 ('2024-10-03 16:51:00', 4),
 ('2023-10-31 13:11:00', 5),
-('2024-11-01 15:30:00', 1),
-('2023-07-02 13:00:00', 2),
-('2024-05-09 10:25:00', 3),
-('2024-10-03 17:51:00', 4),
-('2023-10-31 14:11:00', 5);
+('2024-10-01 15:30:00', 6),
+('2023-06-20 13:00:00', 7),
+('2024-04-18 10:25:00', 8),
+('2024-10-02 17:51:00', 9),
+('2023-10-11 14:11:00', 10),
+('2024-10-30 04:58:00', 11),
+('2023-07-01 02:34:00', 12),
+('2024-05-01 11:36:00', 13),
+('2024-10-01 15:09:00', 14),
+('2023-10-25 09:47:00', 15),
+('2024-10-28 14:21:00', 16),
+('2023-06-24 08:56:00', 17),
+
+('2024-11-01 20:30:00', 1),
+('2023-07-02 19:20:00', 2),
+('2024-05-09 21:50:00', 3),
+('2024-10-03 18:43:00', 4),
+('2023-10-31 22:03:00', 5),
+('2024-11-01 21:31:00', 6),
+('2023-07-02 20:07:00', 7),
+('2024-05-09 21:06:00', 8),
+('2024-10-03 18:29:00', 9),
+('2023-10-31 20:14:00', 10),
+('2024-11-01 19:09:00', 11),
+('2023-07-02 21:48:00', 12),
+('2024-05-09 18:41:00', 13),
+('2024-10-03 20:20:00', 14),
+('2023-10-31 22:09:00', 15),
+('2024-11-01 22:45:00', 16),
+('2023-07-02 22:57:00', 17);
 UNLOCK TABLES;
 
 -- Ticket Records (TBD By Anja)
@@ -420,9 +445,9 @@ UNLOCK TABLES;
 LOCK TABLES Tickets WRITE;
 INSERT INTO Tickets(ticket_type_ID, transaction_ID)
 VALUES
-(1, 1), (1, 1), (1, 1), (2, 1), (2, 1), (3, 1), (4, 1),
+(1, 1), (1, 1), (1, 1), (2, 1), (2, 1), (3, 1), (4, 1), (4, 1),
 (1, 2), (1, 2), (2, 2), (2, 2), (2, 2), (3, 2), (3, 2), (4, 2),
-(1, 3), (1, 3), (2, 3), (3, 3), (4, 3), (4, 3), (4, 3),
+(1, 3), (1, 3), (2, 3), (3, 3), (4, 3), (4, 3), (4, 3), (4, 3),
 (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (2, 4), (3, 4), (4, 4),
 (1, 5), (2, 5), (2, 5), (2, 5), (3, 5), (3, 5), (3, 5), (4, 5);
 UNLOCK TABLES;
@@ -449,9 +474,100 @@ UNLOCK TABLES;
 LOCK TABLES Merchandise_Purchases WRITE;
 INSERT INTO Merchandise_Purchases(quantity_bought, item_ID, transaction_ID)
 VALUES
-(10, 1, 6),
-(100, 9, 9),
-(2, 3, 7),
-(4, 8, 10),
-(8, 4, 8);
+(10, 1, 6), (100, 9, 9), (2, 3, 7),
+(4, 8, 10), (8, 4, 8), (6, 3, 6),
+(10, 1, 8), (10, 2, 7), (22, 1, 8),
+(90, 4, 8), (15, 2, 9), (20, 2, 10),
+(35, 10, 10), (40, 6, 6), (60, 7, 9),
+(80, 10, 6), (60, 1, 8), (30, 2, 7),
+(12, 4, 10), (120, 7, 10), (123, 4, 9),
+(178, 7, 6), (56, 3, 8), (91, 5, 10),
+(63, 2, 7), (145, 6, 7), (34, 8, 6),
+(200, 1, 10), (112, 9, 9), (60, 4, 7),
+(85, 3, 8), (150, 6, 7), (32, 2, 9),
+(75, 8, 10), (120, 5, 6), (45, 9, 8),
+(180, 7, 9), (58, 1, 6), (110, 10, 9),
+(98, 4, 10), (45, 6, 9), (125, 3, 7),
+(88, 5, 8), (154, 9, 10), (75, 2, 6),
+(40, 7, 7), (112, 4, 9), (199, 1, 10),
+(65, 8, 8), (80, 6, 7), (130, 4, 7),
+(54, 9, 10), (145, 3, 6), (98, 7, 9),
+(65, 5, 6), (175, 2, 10), (40, 8, 7),
+(56, 9, 9), (117, 1, 8), (59, 7, 10),
+(112, 3, 6), (133, 6, 7), (90, 4, 9),
+(101, 5, 8), (149, 8, 10), (60, 1, 6),
+(85, 7, 8), (120, 10, 9), (77, 2, 9),
+(38, 5, 7), (92, 6, 9), (150, 9, 6),
+(125, 3, 7), (62, 8, 10), (78, 5, 8),
+(112, 4, 6), (186, 7, 9), (50, 2, 10),
+(115, 3, 8), (66, 9, 7), (44, 1, 9),
+(130, 6, 8), (58, 4, 10), (125, 8, 6),
+(76, 3, 7), (140, 5, 8), (87, 1, 6),
+(97, 7, 10), (55, 6, 9), (80, 2, 7),
+(138, 9, 9), (108, 4, 6), (91, 7, 8),
+(119, 3, 7), (132, 8, 9), (64, 5, 7),
+(121, 2, 8), (134, 7, 9), (58, 2, 6),
+(187, 9, 8), (110, 4, 7), (92, 1, 6),
+(75, 8, 10), (64, 5, 8), (142, 6, 9),
+(53, 3, 7), (183, 2, 9), (102, 10, 6),
+(175, 7, 10), (119, 6, 8), (54, 8, 9),
+(189, 4, 7), (99, 1, 6), (146, 3, 7),
+(63, 9, 10), (181, 5, 9), (120, 7, 6),
+(135, 2, 8), (69, 4, 10), (101, 6, 9),
+(88, 1, 7), (45, 8, 9), (157, 3, 8),
+(80, 9, 6), (72, 2, 10), (165, 7, 8),
+(130, 5, 7), (118, 9, 9), (55, 10, 6),
+(177, 4, 10), (91, 6, 7), (107, 3, 8),
+(163, 2, 9), (136, 8, 6), (56, 5, 10),
+(148, 7, 9), (79, 10, 7), (93, 4, 6),
+(162, 1, 8), (175, 9, 10), (120, 8, 7),
+(80, 3, 9), (63, 6, 10), (139, 7, 6),
+(54, 2, 8), (116, 4, 9), (145, 1, 7),
+(66, 9, 8), (187, 3, 6), (110, 5, 9),
+(98, 8, 7), (101, 2, 10), (133, 6, 8),
+(173, 10, 9), (82, 1, 6), (120, 7, 8),
+(56, 9, 9), (75, 4, 7), (190, 5, 10),
+(89, 6, 7), (137, 2, 7), (108, 10, 7),
+(176, 3, 8), (67, 8, 6), (95, 1, 9),
+(60, 7, 10), (154, 4, 9), (110, 5, 7),
+(173, 9, 8), (145, 3, 6), (121, 2, 8),
+(132, 6, 9), (78, 7, 10), (142, 10, 7),
+(55, 6, 9), (102, 9, 7), (186, 4, 8),
+(127, 1, 6), (89, 3, 10), (116, 8, 9),
+(53, 7, 8), (60, 2, 9), (90, 5, 7),
+(8, 5, 6), (50, 1, 9), (115, 10, 8);
 UNLOCK TABLES;
+
+-- Events
+
+CREATE EVENT check_concert_completion
+ON SCHEDULE EVERY 1 SECOND
+DO
+	UPDATE concerts
+    SET concert_status = 'COMPLETED'
+    WHERE CONCAT(concert_date, ' ', end_time) < NOW() AND concert_status = 'UPCOMING';
+    
+    
+CREATE EVENT handle_concert_cancellation_merchandise
+ON SCHEDULE EVERY 1 SECOND
+DO
+	DELETE tr
+    FROM transactions tr
+    JOIN merchandise_purchases mp ON mp.transaction_ID = tr.transaction_ID
+    JOIN merchandise m ON m.item_ID = mp.item_ID
+    JOIN concerts c ON m.concert_ID = c.concert_ID
+    WHERE c.concert_status = 'CANCELLED';
+    
+CREATE EVENT handle_concert_cancellation_tickets
+ON SCHEDULE EVERY 1 SECOND
+DO
+	DELETE tr
+    FROM transactions tr
+    JOIN tickets t ON t.transaction_ID = tr.transaction_ID
+    JOIN ticket_types tt ON t.ticket_type_ID = tt.ticket_type_ID
+    JOIN concerts c ON tt.concert_id = c.concert_ID
+    WHERE c.concert_status = 'CANCELLED';
+
+SET GLOBAL event_scheduler = ON;
+
+
